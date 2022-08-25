@@ -16,7 +16,11 @@ import LogoutIcon from "@mui/icons-material/Logout";
 // Swith Mode
 import Switch from "@mui/material/Switch";
 import { AuthContext } from "../App";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+// Dark Mode nice UI verson haha
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -88,7 +92,8 @@ export default function SearchAppBar() {
         sx={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "space-between",
+          justifyContent: "space-around",
+          alignItems: "center",
         }}
       >
         <Toolbar>
@@ -101,7 +106,7 @@ export default function SearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          {/* <Link to="/"> */}
+
           <Typography
             variant="h6"
             noWrap
@@ -116,7 +121,7 @@ export default function SearchAppBar() {
           >
             Job Routing by BaoBao
           </Typography>
-          {/* </Link> */}
+
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -127,6 +132,29 @@ export default function SearchAppBar() {
             />
           </Search>
         </Toolbar>
+
+        {/* <Switch checked={auth.darkMode} onClick={toggleThemeChange} /> */}
+        <Button
+          onClick={toggleThemeChange}
+          sx={{
+            display: "flex",
+            height: "35px",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "text.primary",
+            borderRadius: 1,
+          }}
+        >
+          {auth.theme.palette.mode} mode
+          <IconButton sx={{ ml: 1 }} color="inherit">
+            {auth.theme.palette.mode === "dark" ? (
+              <Brightness7Icon />
+            ) : (
+              <Brightness4Icon />
+            )}
+          </IconButton>
+        </Button>
+
         <Box sx={{ display: "flex", alignItems: "center", mr: 3 }}>
           {auth.loggedIn ? (
             <Button color="inherit" onClick={handleSignOut}>
@@ -139,8 +167,6 @@ export default function SearchAppBar() {
               Login
             </Button>
           )}
-
-          <Switch checked={auth.darkMode} onClick={toggleThemeChange} />
         </Box>
       </AppBar>
     </Box>

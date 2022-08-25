@@ -23,7 +23,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <AuthContext.Provider
-        value={{ loggedIn, setLoggedIn, darkMode, setDarkMode }}
+        value={{ loggedIn, setLoggedIn, darkMode, setDarkMode, theme }}
       >
         <Routes>
           <Route path="/" element={<HomePage />} />
