@@ -12,7 +12,7 @@ function HomePage() {
     const fetchData = async () => {
       try {
         const response = await apiService.get("/jobs");
-        // console.log(response);
+        console.log(response);
 
         setJobs(response.data);
       } catch (error) {
@@ -20,7 +20,7 @@ function HomePage() {
       }
     };
     fetchData();
-    // console.log(">>> BASE_URL", BASE_URL);
+    console.log(">>> BASE_URL", BASE_URL);
   }, []);
 
   return (

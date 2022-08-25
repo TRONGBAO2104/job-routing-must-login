@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -14,7 +14,7 @@ import Button from "@mui/material/Button";
 import LogoutIcon from "@mui/icons-material/Logout";
 
 // Swith Mode
-import Switch from "@mui/material/Switch";
+// import Switch from "@mui/material/Switch";
 import { AuthContext } from "../App";
 import { useNavigate } from "react-router-dom";
 

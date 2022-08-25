@@ -1,4 +1,4 @@
-import { Box, Chip, Container, Divider, Typography } from "@mui/material";
+import { Box, Chip, Container, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import apiService from "../app/apiService";
