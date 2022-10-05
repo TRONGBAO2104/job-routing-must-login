@@ -3,11 +3,11 @@ import apiService from "../app/apiService";
 import { BASE_URL } from "../app/config";
 
 import JobList from "../components/JobList";
-import BasicPagination from "../components/BasicPagination";
 import SearchAppBar from "../components/SearchAppBar";
 
 function HomePage() {
   const [jobs, setJobs] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -28,8 +28,6 @@ function HomePage() {
       <SearchAppBar />
 
       <JobList jobs={jobs} />
-
-      <BasicPagination />
     </>
   );
 }

@@ -37,8 +37,9 @@ function LoginForm() {
 
   const onSubmit = async (data) => {
     console.log(">>> onSubmit");
-    let email = data.email;
-    let password = data.password;
+    const { email, password } = data;
+    // let email = data.email;
+    // let password = data.password;
     try {
       await login({ email, password });
       auth.setLoggedIn(true);
@@ -62,7 +63,7 @@ function LoginForm() {
         LOGIN
       </Typography>
 
-      <form onSubmit={handleSubmit(onSubmit)} onClick={() => clearErrors()}>
+      <form onSubmit={handleSubmit(onSubmit)} onChange={() => clearErrors()}>
         <Stack spacing={3}>
           <Box sx={{ height: "40px" }}>
             {!!errors.afterSubmit && (
